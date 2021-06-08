@@ -8,8 +8,8 @@ function App() {
     const [albumData, setAlbumData] = useState(null);
 
     useEffect(() => {
-        albumService.getAll()
-            .then(data => setAlbumData(data));
+        albumService.getAlbums()
+            .then(albums => setAlbumData(albums));
     }, []);
 
     return (
