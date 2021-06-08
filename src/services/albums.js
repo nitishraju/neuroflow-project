@@ -3,7 +3,9 @@ import { mockFetchHelper } from './mock_api';
 
 const getAll = async () => {
     const data = await mockFetchHelper(albumJson);
-    return data;
+    return data['albums'];
 };
 
-export default { getAll };
+const serviceFunctions = { getAll };
+
+export default serviceFunctions;
