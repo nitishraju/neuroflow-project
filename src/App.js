@@ -29,7 +29,7 @@ function App() {
         const formatAlbumData = (albumItem, keyName) => {
             const albumVal = albumItem[keyName];
 
-            if (albumItem != null) {
+            if (albumVal != null) {
                 switch (keyName) {
                 case 'genres':
                     return albumVal.join(', ');
