@@ -55,17 +55,19 @@ function App() {
         });
 
         return (
-            <Table striped bordered hover variant="dark">
-                <TableHeader headings={TABLE_HEADINGS} />
-                <TableBody tableData={albumData} keyNames={KEY_NAMES} formatData={formatAlbumData} />
-            </Table>
+            <div id="albumTable">
+                <Table striped bordered hover variant="dark">
+                    <TableHeader headings={TABLE_HEADINGS} />
+                    <TableBody tableData={albumData} keyNames={KEY_NAMES} formatData={formatAlbumData} />
+                </Table>
+            </div>
         );
     };
 
     return (
-        <div className="App">
+        <div id="root">
             <div>
-                <h1>NeuroFlow: User Albums Table</h1>
+                <h1 id="titleText" className="whiteText">NeuroFlow: User Albums Table</h1>
             </div>
             {albumData == null
                 ? <Loading />

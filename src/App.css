@@ -1,0 +1,39 @@
+/* common style classes */
+.whiteText {
+    color: white;
+}
+
+
+/* Loading.js styles */
+#loadingContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#loadingText {
+    margin-left: 10px;
+}
+
+.spinner-border {
+    margin-top: 5px;
+}
+
+
+/* App.js styles */
+#root {
+    height: 100vh;
+    width: 100%;
+    background-color: #474E53;
+}
+
+#titleText {
+    font-weight: 600;
+    text-align: center;
+    padding-top: 60px;
+}
+#albumTable {
+    margin: 60px auto 0;
+    width: 85%;
+}
