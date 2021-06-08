@@ -1,6 +1,7 @@
 /**
  * Formats date object into the form MM/DD/YYYY.
  * Passing 'true' as second argument collects and formats time as HH:MM.
+ *
  */
 const formatDateObject = (dateObj, withTime=false) => {
 
@@ -15,7 +16,7 @@ const formatDateObject = (dateObj, withTime=false) => {
 
     let timeString = '';
     if (withTime) {
-        const hrs = padZeros(dateObj.getHours() % 12 || 12);
+        const hrs = padZeros(dateObj.getHours() % 12 || 12); //If hrs = 0, replace with 12
         const mins = padZeros(dateObj.getMinutes());
         const period = dateObj.getHours() >= 12 ? 'pm' : 'am';
         timeString = ' ' + hrs + ':' + mins + period;

@@ -51,7 +51,7 @@ function App() {
             const item1Time = item1['last_listened'] ?? -Infinity;
             const item2Time = item2['last_listened'] ?? -Infinity;
 
-            return item1Time <= item2Time;
+            return item1Time <= item2Time; //sorting by last_listened (descending)
         });
 
         return (

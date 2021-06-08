@@ -17,8 +17,8 @@ const TableBody = ({ tableData, keyNames, formatData = (obj, key) => obj[key] })
 };
 
 TableBody.propTypes = {
-    tableData: PropTypes.arrayOf(PropTypes.object),
-    keyNames: PropTypes.arrayOf(PropTypes.string),
+    tableData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    keyNames: PropTypes.arrayOf(PropTypes.string).isRequired,
     formatData: PropTypes.func,
 };
 
