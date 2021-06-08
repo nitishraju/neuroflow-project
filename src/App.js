@@ -4,6 +4,8 @@ import Table from 'react-bootstrap/Table';
 
 import albumService from './services/albums';
 
+import formatting from './utils/formatting';
+
 import Loading from './components/Loading';
 import TableHeader from './components/TableHeader';
 import TableBody from './components/TableBody';
@@ -22,6 +24,44 @@ function App() {
             .then(albums => setAlbumData(albums));
     }, []);
 
+    const renderAlbumTable = () => {
+
+        const formatAlbumData = (albumItem, keyName) => {
+            const albumVal = albumItem[keyName];
+
+            if (albumItem != null) {
+                switch (keyName) {
+                case 'genres':
+                    return albumVal.join(', ');
+                case 'last_listened':
+                    return formatting.formatDateObject(new Date(albumVal), true);
+                case 'release_date':
+                    return formatting.formatDateObject(new Date(albumVal));
+                default:
+                    return albumVal;
+                }
+            } else {
+                return '--';
+            }
+        };
+
+        albumData.sort((item1, item2) => {
+            //if last_listened value is nullish, make infinitely small
+            //this causes the entry to be sorted to the end of the array/listed at the end of the table
+            const item1Time = item1['last_listened'] ?? -Infinity;
+            const item2Time = item2['last_listened'] ?? -Infinity;
+
+            return item1Time <= item2Time;
+        });
+
+        return (
+            <Table striped bordered hover variant="dark">
+                <TableHeader headings={TABLE_HEADINGS} />
+                <TableBody tableData={albumData} keyNames={KEY_NAMES} formatData={formatAlbumData} />
+            </Table>
+        );
+    };
+
     return (
         <div className="App">
             <div>
@@ -29,12 +69,8 @@ function App() {
             </div>
             {albumData == null
                 ? <Loading />
-                : (
-                    <Table striped bordered hover variant="dark">
-                        <TableHeader headings={TABLE_HEADINGS} />
-                        <TableBody tableData={albumData} keyNames={KEY_NAMES} />
-                    </Table>
-                )}
+                : renderAlbumTable()
+            }
         </div>
     );
 }

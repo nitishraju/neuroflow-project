@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const TableBody = ({ tableData, keyNames, formatData = (item) => item }) => {
+const TableBody = ({ tableData, keyNames, formatData = (obj, key) => obj[key] }) => {
     return (
         <tbody>
             {tableData.map((albumItem, index) => (
                 <tr key={index}>
                     {keyNames.map((keyName, keyIndex) => (
-                        <td key={keyIndex}>{formatData(albumItem[keyName])}</td>
+                        <td key={keyIndex}>{formatData(albumItem, keyName)}</td>
                     ))}
                 </tr>
             ))}

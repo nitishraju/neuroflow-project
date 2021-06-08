@@ -3,6 +3,7 @@
  * Passing 'true' as second argument collects and formats time as HH:MM.
  */
 const formatDateObject = (dateObj, withTime=false) => {
+
     const padZeros = (val) => {
         return val <= 9 ? '0' + val : val.toString();
     };
