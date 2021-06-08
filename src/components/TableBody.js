@@ -8,7 +8,7 @@ const TableBody = ({ tableData, keyNames, formatData = (item) => item }) => {
             {tableData.map((albumItem, index) => (
                 <tr key={index}>
                     {keyNames.map((keyName, keyIndex) => (
-                        <tr key={keyIndex}>{formatData(albumItem[keyName])}</tr>
+                        <td key={keyIndex}>{formatData(albumItem[keyName])}</td>
                     ))}
                 </tr>
             ))}
