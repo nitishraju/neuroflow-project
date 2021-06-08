@@ -24,6 +24,9 @@ function App() {
 
     return (
         <div className="App">
+            <div>
+                <h1>NeuroFlow: User Albums Table</h1>
+            </div>
             {albumData == null
                 ? <Loading />
                 : (
