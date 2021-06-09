@@ -1,5 +1,7 @@
 # Neuroflow: Coding Assessment
 
+The objective of this project was to create a simple frontend application to pull data from a mock API and present it in a tabular format. Nullish values are replaced with a placeholder, and the table rendering is delayed until the API request is successfully completed.
+
 ## Setup
 
 1. Clone the repository; Run: ```git clone https://github.com/nitishraju/neuroflow-project.git```
