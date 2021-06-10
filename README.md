@@ -21,3 +21,9 @@ React Bootstrap is also used in this project. The library provides easy access t
 the Spinner and Table components. This saves a large amount of time creating custom styling for each part of the web app.
 
 ESLint is also used to enforce code style in the project, allowing for readability and consistency across the project's code.
+
+## Demo
+
+A GIF of the web app rendering the table after displaying the loading screen until the data is retrieved: 
+
+<img src="./readme-assets/demo.gif" alt="Website Demo" width="900" height="500">
